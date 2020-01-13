@@ -33,7 +33,6 @@ module.exports = function (opts) {
   var enableTypes = opts.enableTypes || ['json', 'form'];
   var enableForm = checkEnable(enableTypes, 'form');
   var enableJson = checkEnable(enableTypes, 'json');
-  var enableText = checkEnable(enableTypes, 'text');
 
   opts.detectJSON = undefined;
   opts.onerror = undefined;
@@ -93,10 +92,7 @@ module.exports = function (opts) {
     if (enableForm && ctx.request.is(formTypes)) {
       return await parse.form(ctx, formOpts);
     }
-    if (enableText && ctx.request.is(textTypes)) {
-      return await parse.text(ctx, textOpts) || '';
-    }
-    return {};
+    return await parse.text(ctx, textOpts) || '';
   }
 };
 

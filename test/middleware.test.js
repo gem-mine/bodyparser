@@ -268,7 +268,7 @@ describe('test/middleware.test.js', function () {
 
     it('should get body null', function (done) {
       app.use(async (ctx) => {
-        ctx.request.body.should.eql( {} );
+        ctx.request.body.should.eql( '' );
         ctx.body = ctx.request.body;
       });
       request(app.listen())
