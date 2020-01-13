@@ -1,5 +1,5 @@
 {
-  "name": "@gem-mine/koa-bodyparser",
+  "name": "@gem-mine/bodyparser",
   "version": "4.2.2",
   "description": "a body parser for koa",
   "main": "index.js",
